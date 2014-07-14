@@ -2,7 +2,14 @@
 
 Etcd = require('node-etcd');
 etcd = new Etcd();
-//etcd.set("keys", "value");
+
+console.log(Math.round(new Date().getTime()/1000))
+
+
+//heartbeat
+etcd.set("mi/heartbeat", Math.round(new Date().getTime()/1000));
+
+//get config
 etcd.get("mi/tag", function(val, val2){
     
     v = val2.node.value
@@ -13,3 +20,9 @@ etcd.get("mi/tag", function(val, val2){
     
     }
 );
+    
+    
+//service url
+    
+    
+console.log(Math.round(new Date().getTime()/1000))
